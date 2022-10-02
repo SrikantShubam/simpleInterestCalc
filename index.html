@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>SI calculator</title>
+  </head>
+  <body id="bd">
+    <div class="container">
+      <!-- <div class="row mt-5">
+    <div class="col-sm-8 mt-4">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-8"> Simple Interest calculator</div>
+    </div>
+    <div class="col-sm-4 col-lg-4"><div class="btn btn-primary"></div></div>
+</div> -->
+      <nav class="navbar navbar-expand-lg navbar-light mt-5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img
+              src="Estimate.png"
+              width="64"
+              height="70"
+              class="d-inline-block"
+              alt=""
+            />
+            <h2 class="d-inline-block ">Simple Interest Calculator</h2>
+          </a>
+          <div class="content ">
+            <i class="fas fa-sun"></i>
+            &nbsp;&nbsp;&nbsp;
+            <input type="checkbox" id="tooglenight" class="cbx hidden"/>
+            <label for="tooglenight" class="switch"></label>
+            &nbsp;&nbsp;&nbsp;
+            <i class="fas fa-moon"></i>
+        </div>
+        </div>
+      </nav>
+    </div>
+    <div class="container-fluid" id="details">
+      <div class="row">
+        <div class="col-sm-6 text-center">
+          <h2 id="total_int" class="d-inline-block mt-5">₹ 0,00,00.00</h2>
+          <h3>Total Interest</h3>
+        </div>
+
+        <div class="col-sm-6 text-center">
+          <h2 id="total_amt" class="d-inline-block mt-5">₹ 0,00,000.00</h2>
+          <h3>Total Amount</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row mt-5">
+            <div class="col-md-6">
+                <h3 style="margin-bottom:-2rem">Principal Amount</h3>
+              <input type="text" class="css-input my-5" placeholder="Enter Principal Amount" id="principal_amount">
+            </div>
+            <br />
+            <div class="col-md-6">
+                <h3 style="margin-bottom:-2rem";>Time (in years)</h3>
+              <input type="text" class="css-input mt-5" placeholder="Enter the duration " id="duration"/>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row mt-5">
+              <div class="col-md-6">
+                <h3 style="margin-bottom:-2rem">Rate %</h3>
+                <input type="text" class="css-input my-5" placeholder="Enter the rate" id="rate"/>
+              </div>
+              <br />
+              <div class="col-md-6">
+                <a class="fancy mt-5" href="#" type="submit" onClick="calc();">
+                    <span class="top-key"></span>
+                    <span class="text">Calculate</span>
+                    <span class="bottom-key-1"></span>
+                    <span class="bottom-key-2"></span>
+                  </a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </form>
+    </div>
+
+
+
+
+
+<footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Facebook -->
+           
+      
+            <!-- Twitter -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fa-brands fa-twitter"></i>
+            </a>
+      
+        
+            <!-- Instagram -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+      
+            <!-- Linkedin -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+      
+            <!-- Github -->
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+      
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2022 Copyright:
+          <a class="text-white" href="https://mdbootstrap.com/">Srikant Shubham</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+ 
+    <script>
+        function calc(){
+            let p = document.getElementById("principal_amount").value;
+            
+            console.log(p);
+            let r = document.getElementById("rate").value;
+            
+            console.log(r);
+            let t = document.getElementById("duration").value;
+            
+            console.log(t);
+
+            let i =(p*r*t)/100;
+            var amt=parseInt(p)+parseInt(i);
+            document.getElementById("total_int").innerHTML=i;
+            document.getElementById("total_amt").innerHTML=amt;
+
+var icon=document.getElementById('tooglenight')
+icon.onclick=function(){
+    document.body.classList.toggle("dark-theme");
+}
+      
+
+        }
+       
+    </script>
+      <!-- End of .container -->
+  </body>
+</html>

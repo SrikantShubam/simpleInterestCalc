@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap');
+/*input component*/
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+:root{
+    --primary-color:#FFD007;
+    --sec-color:#000000;
+}
+.dark-theme{
+    --primary-color:#000106;
+    --sec-color:#ffffff;
+}
+body{
+    background-color:var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+  
+}
+h3{
+    font-family: 'Lobster', sans-serif;
+}
+#details{
+    width: 100%;
+    height: 166px;
+    background-color: var(--sec-color) !important;
+    color: white;
+    margin-top: 2.2rem;
+}
+
+.css-input {
+    padding: 25px;
+    font-size: 20px;
+    border-width: 0px;
+    border-color: var(--sec-color);
+    background-color: var(--sec-color);
+    color: #ffffff;
+    border-style: solid;
+    border-radius: 20px;
+    box-shadow: 70px 0px 0px #E2B806;
+    text-shadow: -50px 0px 0px rgba(66,66,66,.0);
+    
+}
+.css-input:focus{
+  outline: none;
+  
+}
+
+
+
+
+.fancy {
+    margin-top: 2em;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 1.5em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+   }
+   
+   .fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: var(--sec-color);
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+   }
+   
+   .fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+   }
+   
+   .fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+   }
+   
+   .fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+   }
+   
+   .fancy .bottom-key-2 {
+    height: 2px;
+    width: 1.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+   }
+   
+   .fancy:hover {
+    color: white;
+    background: black;
+   }
+   
+   .fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+   }
+   
+   .fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+    font-family: 'Poppins', sans-serif;
+   }
+   
+   .fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+   }
+   
+   .fancy:hover .bottom-key-1,
+    .fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+   }
+
+   footer{
+    margin-top: auto;
+   }
+
+.night{
+    background-position: 0 0;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.content > i{
+  font-size: 44px;
+  transition: all .2s ease-in;
+}
+/* custom checkbox*/
+.switch {
+    position: relative;
+    display: block;
+    height: 20px;
+    width: 44px;
+    background: #303030;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .switch:after {
+    position: absolute;
+    left: -2px;
+    top: -3px;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 100px;
+    background: black;
+    box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+    content: '';
+    transition: all 0.3s ease;
+  }
+  .switch:active:after { transform: scale(1.15, 0.85); }
+  .cbx:checked ~ label { background: #EBEBEB; }
+  .cbx:checked ~ label:after {
+    left: 20px;
+    background: #FFFFFF;
+  }
+  .cbx:disabled ~ label {
+    background: #d5d5d5;
+    pointer-events: none;
+  }
+  .cbx:disabled ~ label:after { background: #bcbdbc; }
+  .hidden { display: none; }
+
